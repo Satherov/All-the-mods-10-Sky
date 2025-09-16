@@ -6,16 +6,16 @@
 let $HashSet = Java.loadClass("java.util.HashSet")
 let bannedItems = new $HashSet()
 
-NetworkEvents.dataReceived("banned_items", (event) => {
+NetworkEvents.dataReceived("banned_items", event => {
   console.log("Received banned items...")
-  event.data.get("banned_items").forEach((value) => {
+  event.data.get("banned_items").forEach(value => {
     console.log("Adding item " + value + " to banned list")
     bannedItems.add(value.getAsString())
   })
 })
 
 // When aiming at air
-ItemEvents.rightClicked((event) => {
+ItemEvents.rightClicked(event => {
   if (bannedItems.contains(event.item.id)) {
     // event.entity.setStatusMessage(Text.gold("You are not allowed to use this item"))
     event.cancel()
@@ -23,7 +23,7 @@ ItemEvents.rightClicked((event) => {
 })
 
 // When aiming at any block
-BlockEvents.rightClicked((event) => {
+BlockEvents.rightClicked(event => {
   if (bannedItems.contains(event.item.id)) {
     // event.entity.setStatusMessage(Text.gold("You are not allowed to use this item"))
     event.cancel()
