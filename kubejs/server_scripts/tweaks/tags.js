@@ -7,6 +7,7 @@ ServerEvents.tags("block", (allthemods) => {
 
   // Extreme Reactors
   allthemods.add("c:storage_blocks/yellorium", "alltheores:uranium_block")
+  allthemods.add("c:storage_blocks/plutonium", "bigreactors:blutonium_block")
 
   allthemods.add("c:relocation_not_supported", [
     "minecraft:beehive",
@@ -51,12 +52,22 @@ ServerEvents.tags("item", (allthemods) => {
   // Extreme Reactors
   allthemods.add("c:ingots/yellorium", "alltheores:uranium_ingot")
   allthemods.add("c:storage_blocks/yellorium", "alltheores:uranium_block")
+  allthemods.add("c:storage_blocks/plutonium", "bigreactors:blutonium_block")
 
   // water buckets
   allthemods.add("c:buckets/water", "exdeorum:porcelain_water_bucket")
 
   // lava buckets
   allthemods.add("c:buckets/lava", "exdeorum:porcelain_lava_bucket")
+
+  // Coal tag fix
+  allthemods.add("c:coal", [
+    "minecraft:coal",
+    "minecraft:charcoal",
+    "geore:coal_shard",
+    "modern_industrialization:lignite_coal",
+    "immersiveengineering:coal_coke"
+  ])
 
   // Tiny Coal
   allthemods.add("atm10:tiny_coals", ["utilitarian:tiny_coal", "actuallyadditions:tiny_coal"])
