@@ -7,12 +7,19 @@ ServerEvents.tags("block", (allthemods) => {
 
   // Extreme Reactors
   allthemods.add("c:storage_blocks/yellorium", "alltheores:uranium_block")
+  allthemods.add("c:storage_blocks/plutonium", "bigreactors:blutonium_block")
 
   allthemods.add("c:relocation_not_supported", [
     "minecraft:beehive",
     "minecraft:bee_nest",
     "@integrateddynamics",
     "@waystones"
+  ])
+
+  allthemods.add("c:ingots", [
+    "allthemodium:unobtainium_allthemodium_alloy_ingot",
+    "allthemodium:unobtainium_vibranium_alloy_ingot",
+    "allthemodium:vibranium_allthemodium_alloy_ingot"
   ])
 
   allthemods.remove("c:relocation_not_supported", [
@@ -28,7 +35,10 @@ ServerEvents.tags("block", (allthemods) => {
     "geore:budding_emerald",
     "geore:budding_sapphire",
     "geore:budding_zinc",
-    "geore:budding_topaz"
+    "geore:budding_topaz",
+    "geore:budding_allthemodium",
+    "geore:budding_vibranium",
+    "geore:budding_unobtainium"
   ])
 
   //Entangled
@@ -45,6 +55,7 @@ ServerEvents.tags("item", (allthemods) => {
   // Extreme Reactors
   allthemods.add("c:ingots/yellorium", "alltheores:uranium_ingot")
   allthemods.add("c:storage_blocks/yellorium", "alltheores:uranium_block")
+  allthemods.add("c:storage_blocks/plutonium", "bigreactors:blutonium_block")
 
   // water buckets
   allthemods.add("c:buckets/water", "exdeorum:porcelain_water_bucket")
@@ -245,6 +256,8 @@ ServerEvents.tags("item", (allthemods) => {
     "mysticalagriculture:draconium_essence",
     "mysticalagriculture:marble_seeds",
     "mysticalagriculture:marble_essence",
+    "mysticalagriculture:basalt_seeds",
+    "mysticalagriculture:basalt_essence",
     "exmachinis:netherite_upgrade",
     /geore:.*tungsten.*/,
     /geore:.*monazite.*/,
@@ -273,6 +286,16 @@ ServerEvents.tags("item", (allthemods) => {
   ])
 
   allthemods.add("c:sawdust", "exdeorum:wood_chippings")
+
+  // Allow additional Ars Elemental armors to be used for Allthemodium Arcanist Gear
+
+  allthemods.add("allthearcanistgear:elemental_hat", [/ars_elemental:.*_helmet/, /ars_elemental:.*_hood/])
+
+  allthemods.add("allthearcanistgear:elemental_chest", [/ars_elemental:.*_chestplate/, /ars_elemental:.*_tunic/])
+
+  allthemods.add("allthearcanistgear:elemental_legs", [/ars_elemental:.*_leggings_heavy/, /ars_elemental:.*_pants/])
+
+  allthemods.add("allthearcanistgear:elemental_boots", [/ars_elemental:.*_boots_heavy/, /ars_elemental:.*_shoes/])
 
   // For crushing recipes
   allthemods.add("c:deepslate_blocks", ["minecraft:deepslate", "minecraft:cobbled_deepslate"])
