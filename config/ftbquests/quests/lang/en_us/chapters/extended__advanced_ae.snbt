@@ -9,8 +9,8 @@
 		"- Exactly one Quantum Computer Core"
 		"- At most one Quantum Data Entangler"
 		"- At most one Quantum Computer Multi-Threader"
-		"- All blocks on the outside layer must be Quantum Computer Structure"
-		"- No blocks on the insite can be Quantum Computer Structure."
+		"- All blocks on the outside layer must be Quantum Computer Structural Glass"
+		"- No blocks on the inside can be Quantum Computer Structural Glass."
 		""
 		"Hope you're ready to make a lot of Singularities."
 	]
@@ -232,6 +232,5 @@
 	task.1B927BD83D40F37D.title: "Non-Entro Things"
 	task.3A76350DDF5A318D.title: "Advanced Pattern Providers"
 	task.3E8E72F0861329B6.title: "AllRightsReserved"
-	task.438D5F2C7BBDD0E2.title: ""
 	task.475B673DC78361D2.title: "Extended Devices"
 }
