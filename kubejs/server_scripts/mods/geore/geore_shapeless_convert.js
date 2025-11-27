@@ -31,8 +31,20 @@ ServerEvents.recipes((event) => {
   ]
 
   geoOres.forEach((name) => {
+
+    let shards = Item.of(`geore:${name}_shard`, 4)
+    let block = Item.of(`geore:${name}_block`)
+
     event
-      .shapeless(Item.of(`geore:${name}_shard`, 4), [Item.of(`geore:${name}_block`)])
+      .shapeless(shards, [block])
       .id(`allthemods:geoore/shapeless/${name}_block`)
+
+    event
+      .custom({
+        type: "functionalstorage:custom_compacting",
+        higher_input: block.toJson(),
+        lower_input: shards.toJson()
+      })
+      .id(`allthemods:functionalstorage/compacting/${name}_shard_to_${name}_block`)
   })
 })
