@@ -42,7 +42,9 @@ ServerEvents.recipes((allthemods) => {
           n: entry.amount || 1,
           p: entry.chance
         })
-        .id(`allthemods:exdeorum/${entry.mesh.split(":")[1]}/${material.split(":")[1]}/${output.split(":")[0]}/${output.split(":")[1]}`)
+        .id(
+          `allthemods:exdeorum/${entry.mesh.split(":")[1]}/${material.split(":")[1]}/${output.split(":")[0]}/${output.split(":")[1]}`
+        )
     })
   }
 

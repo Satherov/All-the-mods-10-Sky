@@ -7,14 +7,7 @@ ServerEvents.recipes((allthemods) => {
 
   // kubejs/server_scripts/crushing.js
 
-  const inputs = [
-    "deepslate",
-    "cobbled_deepslate",
-    "end_stone",
-    "blackstone",
-    "sand",
-    "netherrack"
-  ]
+  const inputs = ["deepslate", "cobbled_deepslate", "end_stone", "blackstone", "sand", "netherrack"]
 
   const outputs = [
     "crushed_deepslate",
@@ -37,17 +30,17 @@ ServerEvents.recipes((allthemods) => {
       })
       .id(`kubejs:mekanism/crushing/${outputs[index]}_from_${input}`)
 
-    for(let i = 1; i < 10; i++) {
+    for (let i = 1; i < 10; i++) {
       allthemods
-      .custom({
-        type: "mekanism:crushing",
-        input: Ingredient.of(`allthecompressed:${input}_${i}x`).toJson(),
-        output: {
-          id: `allthecompressed:${outputs[index]}_${i}x`,
-          count: 1
-        }
-      })
-      .id(`kubejs:mekanism/crushing/compressed/${outputs[index]}_${i}x_from_${input}`)
+        .custom({
+          type: "mekanism:crushing",
+          input: Ingredient.of(`allthecompressed:${input}_${i}x`).toJson(),
+          output: {
+            id: `allthecompressed:${outputs[index]}_${i}x`,
+            count: 1
+          }
+        })
+        .id(`kubejs:mekanism/crushing/compressed/${outputs[index]}_${i}x_from_${input}`)
     }
   })
 

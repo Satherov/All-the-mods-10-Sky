@@ -31,13 +31,10 @@ ServerEvents.recipes((event) => {
   ]
 
   geoOres.forEach((name) => {
-
     let shards = Item.of(`geore:${name}_shard`, 4)
     let block = Item.of(`geore:${name}_block`)
 
-    event
-      .shapeless(shards, [block])
-      .id(`allthemods:geoore/shapeless/${name}_block`)
+    event.shapeless(shards, [block]).id(`allthemods:geoore/shapeless/${name}_block`)
 
     event
       .custom({
