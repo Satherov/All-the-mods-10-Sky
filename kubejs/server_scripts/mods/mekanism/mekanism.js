@@ -35,7 +35,7 @@ ServerEvents.recipes((allthemods) => {
           count: 1
         }
       })
-      .id(`kubejs:mekanism/crushing/${outputs[index]}`)
+      .id(`kubejs:mekanism/crushing/${outputs[index]}_from_${input}`)
 
     for(let i = 1; i < 10; i++) {
       allthemods
@@ -47,7 +47,7 @@ ServerEvents.recipes((allthemods) => {
           count: 1
         }
       })
-      .id(`kubejs:mekanism/crushing/compressed/${outputs[index]}_${i}x`)
+      .id(`kubejs:mekanism/crushing/compressed/${outputs[index]}_${i}x_from_${input}`)
     }
   })
 
