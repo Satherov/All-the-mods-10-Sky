@@ -213,76 +213,45 @@ ServerEvents.recipes((allthemods) => {
   allthemods.recipes.exdeorum.crucible_heat_source({ block: "allthemodium:soul_lava" }, 120)
 
   // Hammer
+
   allthemods.remove({ type: "exdeorum:compressed_hammer" })
+
+  const compressedSets = {
+    gravel: ["cobblestone", "granite", "andesite", "diorite"],
+    sand: ["gravel"]
+  }
+
   for (let i = 1; i < 10; i++) {
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of(`allthecompressed:gravel_${i}x`),
-      1,
-      Ingredient.of(`allthecompressed:cobblestone_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of(`allthecompressed:gravel_${i}x`),
-      1,
-      Ingredient.of(`allthecompressed:granite_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of(`allthecompressed:gravel_${i}x`),
-      1,
-      Ingredient.of(`allthecompressed:andesite_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of(`allthecompressed:gravel_${i}x`),
-      1,
-      Ingredient.of(`allthecompressed:diorite_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of(`allthecompressed:sand_${i}x`),
-      1,
-      Ingredient.of(`allthecompressed:gravel_${i}x`)
-    )
+    for (const [output, inputs] of Object.entries(compressedSets)) {
+      for (const input of inputs) {
+        allthemods.recipes.exdeorum.compressed_hammer(
+          Item.of(`allthecompressed:${output}_${i}x`),
+          1,
+          Ingredient.of(`allthecompressed:${input}_${i}x`)
+        )
+      }
+    }
+  }
+
+  const crushedSets = {
+    "exdeorum:crushed_blackstone": ["blackstone"],
+    "exdeorum:crushed_deepslate": ["deepslate", "cobbled_deepslate"],
+    "exdeorum:crushed_netherrack": ["netherrack"],
+    "exdeorum:dust": ["sand", "red_sand"],
+    "exdeorum:crushed_end_stone": ["end_stone"],
+    "minecraft:red_sand": ["crushed_netherrack"]
   }
 
   for (let i = 1; i < 4; i++) {
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("exdeorum:crushed_blackstone"),
-      Math.pow(9, i),
-      Ingredient.of(`allthecompressed:blackstone_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("exdeorum:crushed_deepslate"),
-      Math.pow(9, i),
-      Ingredient.of(`allthecompressed:deepslate_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("exdeorum:crushed_deepslate"),
-      Math.pow(9, i),
-      Ingredient.of(`allthecompressed:cobbled_deepslate_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("exdeorum:crushed_netherrack"),
-      Math.pow(9, i),
-      Ingredient.of(`allthecompressed:netherrack_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("exdeorum:dust"),
-      Math.pow(9, i),
-      Ingredient.of(`allthecompressed:sand_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("exdeorum:dust"),
-      Math.pow(9, i),
-      Ingredient.of(`allthecompressed:red_sand_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("exdeorum:crushed_end_stone"),
-      Math.pow(9, i),
-      Ingredient.of(`allthecompressed:end_stone_${i}x`)
-    )
-    allthemods.recipes.exdeorum.compressed_hammer(
-      Item.of("minecraft:red_sand"),
-      Math.pow(9, i),
-      Ingredient.of((`allthecompressed:crushed_netherrack_${i}x`))
-    )
+    for (const [output, inputs] of Object.entries(crushedSets)) {
+      for (const input of inputs) {
+        allthemods.recipes.exdeorum.compressed_hammer(
+          Item.of(output),
+          Math.pow(9, i),
+          Ingredient.of(`allthecompressed:${input}_${i}x`)
+        )
+      }
+    }
   }
 
   // Barrel mixing output, input, fluid
