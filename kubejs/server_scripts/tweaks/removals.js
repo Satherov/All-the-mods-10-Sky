@@ -221,6 +221,7 @@ ServerEvents.recipes((allthemods) => {
   allthemods.remove({ id: `create:crushing/tuff_recycling` })
   allthemods.remove({ id: `modern_industrialization:materials/plutonium/craft/block_from_ingot` })
   allthemods.remove({ id: `industrialforegoing:laser_drill_fluid/oil` })
+  allthemods.remove({ id: `mysticalagradditions:nitro_crystal_crux` })
 })
 
 ServerEvents.generateData("after_mods", (allthemods) => {
