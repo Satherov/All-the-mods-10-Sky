@@ -104,10 +104,9 @@ KubeJSTweaks.beforeRecipes((event) => {
     }
   })
 
-  event.getEntry(/^create:.*\/compat\/silentgems\//)
-    .forEach(entry => {
-      entry.addConditionsFromKey("ingredients")
-    })
+  event.getEntry(/^create:.*\/compat\/silentgems\//).forEach((entry) => {
+    entry.addConditionsFromKey("ingredients")
+  })
 
   console.log(`Fixing recipes took ${timer.stop().elapsed("milliseconds")} ms...`)
 })
