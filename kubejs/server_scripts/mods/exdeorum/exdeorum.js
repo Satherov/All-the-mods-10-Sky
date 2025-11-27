@@ -278,6 +278,11 @@ ServerEvents.recipes((allthemods) => {
       Math.pow(9, i),
       Ingredient.of(`allthecompressed:end_stone_${i}x`)
     )
+    allthemods.recipes.exdeorum.compressed_hammer(
+      Item.of("minecraft:red_sand"),
+      Math.pow(9, i),
+      Ingredient.of((`allthecompressed:crushed_netherrack_${i}x`))
+    )
   }
 
   // Barrel mixing output, input, fluid
