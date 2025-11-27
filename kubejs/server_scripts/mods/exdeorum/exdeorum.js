@@ -148,7 +148,8 @@ ServerEvents.recipes((allthemods) => {
     "actuallyadditions:coffee_beans",
     "actuallyadditions:flax_seeds",
     "minecraft:rose_bush",
-    "minecraft:sunflower"
+    "minecraft:sunflower",
+    "silentgear:flax_seeds"
   ].forEach((seed) => {
     sieving(seed, Materials.Dirt, [
       { mesh: Meshes.FLINT, amount: 1, chance: 0.06 },
